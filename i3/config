@@ -118,7 +118,7 @@ exec --no-startup-id nm-applet
 exec --no-startup-id volumeicon
 
 # feh sets wallpaper
-exec --no-startup-id feh --bg-fill /usr/share/backgrounds/arcolinux/NOFQh9F.png
+exec --no-startup-id feh --bg-fill ~/img/wp1.png
 
 # polybar
 #exec_always --no-startup-id ~/.config/polybar/launch.sh &
