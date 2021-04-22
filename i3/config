@@ -105,9 +105,6 @@ font pango:Noto Mono Regular 13
 # authentication dialog
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 
-# updater
-exec --no-startup-id pamac-tray
-
 # bluetooth
 #exec --no-startup-id blueberry-tray
 
