@@ -2,24 +2,26 @@
 
 base="xorg i3-gaps i3status termite fish base-devel nasm feh pulseaudio"
 
-full="$base qtcreator lxrandr firefox networkmanager neofetch xfce4-taskmanager pavucontrol-qt"
+full="$base qtcreator firefox networkmanager neofetch pavucontrol-qt"
+full_aur="spotify qps"
 
-if [ $1 == "base" ]; then
+if [ "$1" == "base" ]; then
 	sudo pacman -S --noconfirm --needed $base
 fi
 
-if [ $1 == "full" ]; then
+if [ "$1" == "full" ]; then
 	sudo pacman -S --noconfirm --needed $full
+	yay -S --noconfirm --needed $full_aur
 fi 
 
-if [ $1 == "yay" ]; then
+if [ "$1" == "yay" ]; then
 	sudo pacman -S --noconfirm --needed go git base-devel
 	git clone "https://www.github.com/Jguer/yay.git"
 	make -C yay
 	sudo make -C yay install
 fi
 
-if [ $1 == "config" ]; then
+if [ "$1" == "config" ]; then
 	mkdir ~/.config
 	
 	# user-dirs

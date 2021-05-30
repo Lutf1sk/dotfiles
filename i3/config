@@ -107,7 +107,7 @@ bindsym $mod+Return exec --no-startup-id termite;focus
 bindsym $mod+KP_Enter exec --no-startup-id termite;focus
 
 # system monitor
-bindsym $mod+t exec --no-startup-id xfce4-taskmanager;focus
+bindsym $mod+t exec --no-startup-id qps;focus
 
 # pavucontrol
 bindsym $mod+p exec --no-startup-id pavucontrol-qt
@@ -116,6 +116,7 @@ bindsym $mod+p exec --no-startup-id pavucontrol-qt
 
 for_window [class="Pavucontrol"] floating enable
 for_window [class="Xfce4-taskmanager"] floating enable
+for_window [class="qps"] floating enable
 for_window [title="Copying"] floating enable
 for_window [title="Deleting"] floating enable
 for_window [title="Moving"] floating enable
