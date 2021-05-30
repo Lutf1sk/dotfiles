@@ -10,11 +10,6 @@ set $down k
 set $left j
 set $right semicolon
 
-# set up monitors
-#exec --no-startup-id xrandr --output DisplayPort-2 --right-of DisplayPort-0 --auto
-#set $firstMonitor DisplayPort-0
-#set $secondMonitor DisplayPort-2
-
 # switch to workspace
 bindsym $mod+1 workspace 1
 bindsym $mod+2 workspace 2
@@ -44,10 +39,6 @@ bindsym $mod+e exec --no-startup-id setxkbmap us
 
 # start dmenu
 bindsym $mod+d exec --no-startup-id dmenu_run -i -nb '#191919' -nf '#d64937' -sb '#d64937' -sf '#191919' -fn 'NotoMonoRegular:bold:pixelsize=14'
-
-# Logout
-# bindsym $mod+Shift+e exec --no-startup-id arcolinux-logout
-# bindsym $mod+X exec --no-startup-id arcolinux-logout
 
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
@@ -102,9 +93,6 @@ bindsym $mod+f fullscreen toggle
 # title font
 font pango:Noto Mono Regular 13
 
-# authentication dialog
-exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
-
 # bluetooth
 #exec --no-startup-id blueberry-tray
 
@@ -117,17 +105,6 @@ exec --no-startup-id volumeicon
 # feh sets wallpaper
 exec --no-startup-id feh --bg-fill ~/img/wp1.png
 
-# polybar
-#exec_always --no-startup-id ~/.config/polybar/launch.sh &
-
-exec --no-startup-id xfce4-power-manager &
-exec --no-startup-id /usr/lib/xfce4/notifyd/xfce4-notifyd &
-
-# conky
-bindsym $mod+c exec --no-startup-id conky-toggle
-bindsym control+mod1+Next exec --no-startup-id conky-rotate -n
-bindsym control+mod1+Prior exec --no-startup-id conky-rotate -p
-
 # terminal
 bindsym $mod+Return exec --no-startup-id termite;focus
 bindsym $mod+KP_Enter exec --no-startup-id termite;focus
@@ -135,30 +112,20 @@ bindsym $mod+KP_Enter exec --no-startup-id termite;focus
 # system monitor
 bindsym $mod+t exec --no-startup-id xfce4-taskmanager;focus
 
+# pavucontrol
 bindsym $mod+p exec --no-startup-id pavucontrol
 
 # floating enabled from some programs - find with xprop
 
-for_window [class="Blueberry.py"] floating enable
-for_window [class="Galculator"] floating enable
-for_window [class="^Gnome-font-viewer$"] floating enable
-for_window [class="^Gpick$"] floating enable
-for_window [class="Font-manager"] floating enable
-for_window [class="Nitrogen"] floating disable
 for_window [class="Pavucontrol"] floating enable
-for_window [class="Peek"] floating enable
-for_window [class="Unetbootin.elf"] floating enable
 for_window [class="Xfce4-taskmanager"] floating enable
 for_window [title="Copying"] floating enable
 for_window [title="Deleting"] floating enable
 for_window [title="Moving"] floating enable
-for_window [title="^Terminator Preferences$"] floating enable
 for_window [window_role="pop-up"] floating enable
 for_window [window_role="^Preferences$"] floating enable
-for_window [window_role="setup"] floating enable
 
 for_window [class="Termite"] focus
-for_window [class="Terminator"] focus
 
 # media keys
 bindsym XF86AudioRaiseVolume exec --no-startup-id "amixer -D pulse sset Master '5%+'"
