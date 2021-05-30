@@ -1,2 +1,2 @@
 # Configs
-My collection of configs, mostly for i3
+My collection of configs and install scripts, mostly for arch/i3.
