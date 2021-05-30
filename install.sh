@@ -2,7 +2,7 @@
 
 base="xorg i3-gaps i3status termite fish base-devel nasm feh pulseaudio"
 
-full="$base qtcreator firefox networkmanager neofetch pavucontrol-qt pcmanfm-qt"
+full="$base qtcreator firefox networkmanager neofetch pavucontrol-qt pcmanfm-qt vlc"
 full_aur="spotify qps"
 
 if [ "$1" == "base" ]; then
