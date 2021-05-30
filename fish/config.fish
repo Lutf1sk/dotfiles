@@ -25,3 +25,7 @@ alias gstat='git status'
 alias cls='clear'
 alias zip='zip -r'
 
+function fish_greeting
+	echo ""
+	neofetch
+end
