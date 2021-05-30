@@ -21,6 +21,12 @@ if [ "$1" == "yay" ]; then
 	sudo make -C yay install
 fi
 
+if [ "$1" == "amdgpu" ]; then
+	gpu="xf86-video-amdgpu mesa vulkan-radeon mesa-vdpau glu mesa-vdpau libva-mesa-driver vulkan-mesa-layers"
+	lib32_gpu="lib32-mesa lib32-vulkan-radeon lib32-mesa-vdpau lib32-glu lib32-mesa-vdpau lib32-libva-mesa-driver lib32-vulkan-mesa-layers"
+	sudo pacman -S --noconfirm --needed $gpu $lib32_gpu
+fi
+
 if [ "$1" == "config" ]; then
 	mkdir ~/.config
 	
