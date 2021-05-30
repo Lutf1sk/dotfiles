@@ -14,6 +14,13 @@ alias yayu='yay -Syu'
 alias yayy='yay -Syy'
 alias yayr='yay -Rs'
 
+alias gadd='git add'
+alias gmv='git mv'
+alias grm='git rm'
+alias gcom='git commit'
+alias gdiff='git diff'
+alias gpush='git push origin'
+
 alias cls='clear'
 alias zip='zip -r'
 
