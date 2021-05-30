@@ -2,7 +2,7 @@
 
 base="xorg i3-gaps i3status termite fish base-devel nasm feh pulseaudio"
 
-full="$base qtcreator lxrandr firefox networkmanager neofetch xfce4-taskmanager pavucontrol volumeicon"
+full="$base qtcreator lxrandr firefox networkmanager neofetch xfce4-taskmanager pavucontrol-qt"
 
 if [ $1 == "base" ]; then
 	sudo pacman -S --noconfirm --needed $base

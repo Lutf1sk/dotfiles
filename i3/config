@@ -99,9 +99,6 @@ font pango:Noto Mono Regular 13
 # network
 exec --no-startup-id nm-applet
 
-# volume
-exec --no-startup-id volumeicon
-
 # feh sets wallpaper
 exec --no-startup-id feh --bg-fill ~/img/wp1.png
 
@@ -113,7 +110,7 @@ bindsym $mod+KP_Enter exec --no-startup-id termite;focus
 bindsym $mod+t exec --no-startup-id xfce4-taskmanager;focus
 
 # pavucontrol
-bindsym $mod+p exec --no-startup-id pavucontrol
+bindsym $mod+p exec --no-startup-id pavucontrol-qt
 
 # floating enabled from some programs - find with xprop
 
