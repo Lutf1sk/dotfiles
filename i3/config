@@ -43,6 +43,9 @@ bindsym $mod+d exec --no-startup-id dmenu_run -i -nb '#191919' -nf '#d64937' -sb
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
 
+# exit i3
+bindsym $mod+Shift+e exit
+
 # reload the configuration file
 bindsym $mod+Shift+c reload
 
@@ -151,9 +154,9 @@ gaps outer 0
 smart_gaps on
 smart_borders on
 
-exec_always --no-startup-id picom --config ~/.config/i3/picom.conf
+# exec_always --no-startup-id picom --config ~/.config/i3/picom.conf
 
-bindsym $mod+control+c exec --no-startup-id ~/.config/i3/scripts/picom-toggle.sh
+# bindsym $mod+control+c exec --no-startup-id ~/.config/i3/scripts/picom-toggle.sh
 
 
 bar {
