@@ -1,6 +1,6 @@
 #!/bin/sh
 
-base="xorg xorg-xinit dmenu i3-gaps i3status termite fish base-devel nasm feh pulseaudio"
+base="xorg xorg-xinit playerctl dmenu i3-gaps i3status termite fish base-devel nasm feh pulseaudio"
 
 full="$base qtcreator firefox networkmanager neofetch pavucontrol-qt pcmanfm-qt vlc"
 full_aur="spotify qps"
@@ -52,8 +52,8 @@ if [ "$1" == "config" ]; then
 	
 	# i3
 	mkdir ~/.config/i3
-	cp i3/config i3/i3status.conf ~/.config/i3/
-	
+	cp i3/config i3/i3status.conf i3/volumectl.sh ~/.config/i3/
+
 	# I'm going to leave this commented to prevent myself from accidentally overwriting
 	# my xinitrc when i don't want to.
 	# xinitrc
