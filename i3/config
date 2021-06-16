@@ -129,11 +129,11 @@ for_window [window_role="^Preferences$"] floating enable
 for_window [class="Termite"] focus
 
 # media keys
-bindsym XF86AudioRaiseVolume exec --no-startup-id "amixer -D pulse sset Master '5%+'"
-bindsym XF86AudioLowerVolume exec --no-startup-id "amixer -D pulse sset Master '5%-'"
-bindsym XF86AudioMute exec --no-startup-id "amixer -D pulse set Master toggle"
+bindsym XF86AudioRaiseVolume exec --no-startup-id ~/.config/i3/volumectl.sh +5%
+bindsym XF86AudioLowerVolume exec --no-startup-id ~/.config/i3/volumectl.sh -5%
+bindsym XF86AudioMute exec --no-startup-id "FIXME"
 
-bindsym XF86AudioPlay exec --no-startup-id playerctl play-pause
+bindsym XF86AudioPlay exec --no-startup-id playerctl pause-play
 bindsym XF86AudioNext exec --no-startup-id playerctl next
 bindsym XF86AudioPrev exec --no-startup-id playerctl previous
 bindsym XF86AudioStop exec --no-startup-id playerctl stop
