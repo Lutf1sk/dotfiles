@@ -1,6 +1,6 @@
 #!/bin/sh
 
-base="xorg xorg-xinit playerctl dmenu i3-gaps i3status termite fish base-devel nasm feh pulseaudio"
+base="xorg xorg-xinit playerctl dmenu i3-gaps i3status alacritty fish base-devel nasm feh pulseaudio"
 
 full="$base qtcreator firefox networkmanager neofetch pavucontrol-qt pcmanfm-qt vlc"
 full_aur="spotify qps"
