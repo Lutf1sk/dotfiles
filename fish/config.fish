@@ -20,6 +20,7 @@ alias grm='git rm'
 alias gcom='git commit'
 alias gdiff='git diff'
 alias gpush='git push origin'
+alias gpull='git pull origin'
 alias gstat='git status'
 
 alias cls='clear'
