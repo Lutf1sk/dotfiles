@@ -12,7 +12,7 @@ fi
 if [ "$1" == "full" ]; then
 	sudo pacman -S --noconfirm --needed $full
 	yay -S --noconfirm --needed $full_aur
-fi 
+fi
 
 if [ "$1" == "yay" ]; then
 	sudo pacman -S --noconfirm --needed go git base-devel

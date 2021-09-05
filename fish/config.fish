@@ -26,8 +26,6 @@ alias gstat='git status'
 alias cls='clear'
 alias zip='zip -r'
 
-alias led='lutcreator'
-
 function fish_greeting
 	echo ""
 	neofetch
