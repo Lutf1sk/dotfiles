@@ -2,7 +2,7 @@
 
 base="xorg xorg-xinit playerctl dmenu i3-gaps i3status alacritty fish base-devel nasm feh pulseaudio"
 
-full="$base qtcreator firefox networkmanager neofetch pavucontrol-qt pcmanfm-qt vlc"
+full="$base qtcreator firefox networkmanager neofetch pavucontrol-qt pcmanfm-qt vlc clementine"
 full_aur="spotify qps"
 
 if [ "$1" == "base" ]; then
