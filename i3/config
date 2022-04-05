@@ -126,7 +126,7 @@ for_window [title="Moving"] floating enable
 for_window [window_role="pop-up"] floating enable
 for_window [window_role="^Preferences$"] floating enable
 
-for_window [class="Termite"] focus
+for_window [title="QEMU.*"] floating enable
 
 # media keys
 bindsym XF86AudioRaiseVolume exec --no-startup-id ~/.config/i3/volumectl.sh +5%
