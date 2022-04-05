@@ -22,6 +22,7 @@ alias gdiff='git diff'
 alias gpush='git push origin'
 alias gpull='git pull origin'
 alias gstat='git status'
+alias gclone='git clone --recursive'
 
 alias cls='clear'
 alias zip='zip -r'
