@@ -159,13 +159,13 @@ smart_borders on
 
 
 bar {
+    position top
     height 20
+
     workspace_buttons yes
     font pango:Noto Sans 11
-
     separator_symbol ":"
-
-    position top
+    tray_output primary
 
     status_command i3status -c ~/.config/i3/i3status.conf
 
