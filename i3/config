@@ -1,4 +1,3 @@
-
 # set Alt key
 #set $mod Mod1
 # set Super key
@@ -97,7 +96,7 @@ bindsym $mod+f fullscreen toggle
 font pango:Noto Mono Regular 13
 
 # bluetooth
-#exec --no-startup-id blueberry-tray
+exec --no-startup-id blueman-applet
 
 # network
 exec --no-startup-id nm-applet
@@ -141,8 +140,8 @@ bindsym XF86AudioStop exec --no-startup-id playerctl stop
 bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight -inc 20 # increase screen brightness
 bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -dec 20 # decrease screen brightness
 
-new_window normal
-new_float normal
+default_border normal
+default_floating_border normal
 
 # popups during fullscreen mode
 popup_during_fullscreen smart
@@ -167,10 +166,11 @@ bar {
     separator_symbol ":"
     tray_output primary
 
+# 	i3bar_command i3bar --transparency
     status_command i3status -c ~/.config/i3/i3status.conf
 
     colors {
-        background #2F2F2F
+        background #000000DD
         statusline #eeeeee
         separator  #666666
 
