@@ -58,6 +58,11 @@ if [ "$1" == "config" ]; then
 	mkdir ~/.config/i3
 	cp i3/config i3/i3status.conf i3/volumectl.sh ~/.config/i3/
 
+	# picom
+	mkdir ~/.config/picom
+	cp picom/picom.conf ~/.config/picom/
+	cp picom/toggle-picom.sh ~/.config/picom/
+
 	# I'm going to leave this commented to prevent myself from accidentally overwriting
 	# my xinitrc when i don't want to.
 	# xinitrc

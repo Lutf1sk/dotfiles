@@ -106,7 +106,6 @@ exec --no-startup-id feh --bg-fill ~/img/wp1.png
 
 # terminal
 bindsym $mod+Return exec --no-startup-id alacritty;focus
-bindsym $mod+KP_Enter exec --no-startup-id alacritty;focus
 
 # system monitor
 bindsym $mod+t exec --no-startup-id qps;focus
@@ -152,10 +151,7 @@ gaps outer 0
 smart_gaps on
 smart_borders on
 
-# exec_always --no-startup-id picom --config ~/.config/i3/picom.conf
-
-# bindsym $mod+control+c exec --no-startup-id ~/.config/i3/scripts/picom-toggle.sh
-
+bindsym $mod+c exec --no-startup-id ~/.config/picom/toggle-picom.sh
 
 bar {
     position top
