@@ -1,4 +1,4 @@
-ls "ls --color=always"
+alias ls="ls --color=always"
 
 alias mkd="mkdir"
 alias mkf="touch"
