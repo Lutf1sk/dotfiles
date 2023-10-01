@@ -31,6 +31,8 @@ alias grst="git reset"
 alias cls="clear"
 alias zip="zip -r"
 
+alias cloc="lcloc -c"
+
 function fish_greeting
 	echo ""
 	neofetch
