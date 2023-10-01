@@ -5,6 +5,8 @@ cursor:
     blinking: On
 
 font:
+  normal:
+    family: Ubuntu Mono
   size: 10
 
 window:
