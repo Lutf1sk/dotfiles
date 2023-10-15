@@ -16,3 +16,8 @@ sudo ln -s /etc/sv/dbus /var/service/
 sudo sv up dbus
 sudo ln -s /etc/sv/polkitd /var/service/
 sudo sv up polkitd
+
+# .bashrc
+cp void_bashrc ~/.bashrc
+
+bash tools.sh
