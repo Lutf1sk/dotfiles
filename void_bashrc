@@ -1,7 +1,7 @@
 # .bashrc
 
 [[ $- != *i* ]] && return
-PS1='\u@\h \W]$ '
+PS1='\[\e[92m\]\u\[\e[0m\]@\h \[\e[32m\]\w\[\e[0m\]> '
 
 alias ls="ls --color=always"
 
@@ -9,16 +9,10 @@ alias mkd="mkdir"
 alias mkf="touch"
 alias mk="make"
 
-alias pac="sudo pacman -S"
-alias pacs="pacman -Ss"
-alias pacu="sudo pacman -Syu"
-alias pacy="sudo pacman -Syy"
-alias pacr="sudo pacman -Rs"
-
-alias yays="yay -Ss"
-alias yayu="yay -Syu"
-alias yayy="yay -Syy"
-alias yayr="yay -Rs"
+alias pac="sudo xbps-install -S"
+alias pacs="xbps-query -Rs"
+alias pacu="sudo xbps-install -Su"
+alias pacr="sudo xbps-remove -R"
 
 alias gadd="git add"
 alias gmv="git mv"
