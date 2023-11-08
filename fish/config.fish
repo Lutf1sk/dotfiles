@@ -32,6 +32,7 @@ alias cls="clear"
 alias zip="zip -r"
 
 alias cloc="lcloc -c"
+alias lmodorg="lmodorg -c"
 
 function fish_greeting
 	echo ""
