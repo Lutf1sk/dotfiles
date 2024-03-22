@@ -102,7 +102,7 @@ exec --no-startup-id blueman-applet
 exec --no-startup-id nm-applet
 
 # feh sets wallpaper
-exec --no-startup-id feh --bg-fill ~/img/wp1.png
+exec --no-startup-id feh --bg-fill ~/img/wallpaper
 
 # terminal
 bindsym $mod+Return exec --no-startup-id alacritty;focus
