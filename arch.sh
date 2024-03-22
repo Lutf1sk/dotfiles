@@ -26,6 +26,7 @@ systemctl --user start pipewire-pulse
 
 bash tools.sh
 bash config.sh
+bash git-conf.sh
 
 if [ "$1" == "amdgpu" ]; then
 	gpu="xf86-video-amdgpu mesa vulkan-radeon mesa-vdpau glu mesa-vdpau libva-mesa-driver vulkan-mesa-layers"

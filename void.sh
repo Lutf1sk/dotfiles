@@ -23,3 +23,4 @@ cp void_bashrc ~/.bashrc
 
 bash tools.sh
 bash config.sh
+bash git-conf.sh
