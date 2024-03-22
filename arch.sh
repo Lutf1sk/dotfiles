@@ -33,6 +33,15 @@ fi
 # ----- copy .xinitrc
 cp xinitrc ~/.xinitrc
 
+# ----- copy fish config
+mkdir -p ~/.config/fish
+cp arch_config.fish ~/.config/fish/
+
+# ----- copy picom configs
+mkdir -p ~/.config/picom
+cp picom/picom.conf ~/.config/picom/
+cp picom/toggle-picom.sh ~/.config/picom/
+
 # ----- run distribution independent scripts
 bash tools.sh
 bash shared.sh
