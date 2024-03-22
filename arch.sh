@@ -26,7 +26,7 @@ systemctl --user enable pipewire-pulse
 systemctl --user start pipewire-pulse
 
 bash tools.sh
-bash config.sh
+bash conf.sh
 bash git-conf.sh
 bash font.sh
 

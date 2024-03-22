@@ -22,6 +22,6 @@ sudo sv up polkitd
 cp void_bashrc ~/.bashrc
 
 bash tools.sh
-bash config.sh
+bash conf.sh
 bash git-conf.sh
 bash font.sh
