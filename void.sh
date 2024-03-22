@@ -22,3 +22,4 @@ sudo sv up polkitd
 cp void_bashrc ~/.bashrc
 
 bash tools.sh
+bash config.sh

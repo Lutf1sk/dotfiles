@@ -25,9 +25,13 @@ systemctl --user enable pipewire-pulse
 systemctl --user start pipewire-pulse
 
 bash tools.sh
+bash config.sh
 
 if [ "$1" == "amdgpu" ]; then
 	gpu="xf86-video-amdgpu mesa vulkan-radeon mesa-vdpau glu mesa-vdpau libva-mesa-driver vulkan-mesa-layers"
 	lib32_gpu="lib32-mesa lib32-vulkan-radeon lib32-mesa-vdpau lib32-glu lib32-mesa-vdpau lib32-libva-mesa-driver lib32-vulkan-mesa-layers"
 	sudo pacman -S --noconfirm --needed $gpu $lib32_gpu
 fi
+
+# xinitrc
+cp xinitrc ~/.xinitrc
