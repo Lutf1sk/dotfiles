@@ -2,7 +2,7 @@
 
 sudo xbps-install -Su void-repo-multilib void-repo-multilib-nonfree void-repo-nonfree
 
-base="psmisc"
+util="psmisc curl"
 dev="git make gcc clang nasm"
 mesa="mesa mesa-dri mesa-vaapi mesa-vdpau"
 terminal="alacritty bash"
@@ -10,7 +10,7 @@ session="polkit dbus elogind dbus-elogind"
 window="sway xorg-server-xwayland xorg-fonts i3status dmenu"
 xdg="xdg-desktop-portal xdg-user-dirs xdg-utils"
 
-sudo xbps-install -Su $base $dev $mesa $terminal $session $window $xdg
+sudo xbps-install -Su $util $dev $mesa $terminal $session $window $xdg
 
 # enable services
 sudo ln -s /etc/sv/dbus /var/service/
@@ -24,3 +24,4 @@ cp void_bashrc ~/.bashrc
 bash tools.sh
 bash config.sh
 bash git-conf.sh
+bash font.sh

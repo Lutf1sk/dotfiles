@@ -1,11 +1,12 @@
 #!/bin/sh
 
+util="curl"
 dev="base-devel git make gcc clang nasm"
 terminal="alacritty fish"
 window="xorg xorg-xinit i3-gaps i3stats dmenu feh"
 sound="wireplumber pipewire pipewire-audio pipewire-alsa pipewire-pulse pipewire-jack"
 
-packages="$dev $terminal $window $sound"
+packages="$util $dev $terminal $window $sound"
 
 # packages
 sudo pacman -S --noconfirm --needed $packages
@@ -27,6 +28,7 @@ systemctl --user start pipewire-pulse
 bash tools.sh
 bash config.sh
 bash git-conf.sh
+bash font.sh
 
 if [ "$1" == "amdgpu" ]; then
 	gpu="xf86-video-amdgpu mesa vulkan-radeon mesa-vdpau glu mesa-vdpau libva-mesa-driver vulkan-mesa-layers"
