@@ -1,7 +1,9 @@
 #!/bin/bash
 
+# ----- add required repositories
 sudo xbps-install -Su void-repo-multilib void-repo-multilib-nonfree void-repo-nonfree
 
+# ----- install system packages
 util="psmisc curl"
 dev="git make gcc clang nasm"
 mesa="mesa mesa-dri mesa-vaapi mesa-vdpau"
@@ -10,18 +12,17 @@ session="polkit dbus elogind dbus-elogind"
 window="sway xorg-server-xwayland xorg-fonts i3status dmenu"
 xdg="xdg-desktop-portal xdg-user-dirs xdg-utils"
 
-sudo xbps-install -Su $util $dev $mesa $terminal $session $window $xdg
+sudo xbps-install -Suy $util $dev $mesa $terminal $session $window $xdg
 
-# enable services
+# ----- enable services
 sudo ln -s /etc/sv/dbus /var/service/
 sudo sv up dbus
 sudo ln -s /etc/sv/polkitd /var/service/
 sudo sv up polkitd
 
-# .bashrc
+# ----- copy .bashrc
 cp void_bashrc ~/.bashrc
 
+# ----- run distribution independent scripts
 bash tools.sh
-bash conf.sh
-bash git-conf.sh
-bash font.sh
+bash shared.sh
