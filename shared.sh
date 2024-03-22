@@ -1,6 +1,6 @@
 #!/bin/bash
 
-DEPENDENCY_URL="https://lutfisk.net/files/ScriptDeps/"
+DEPENDENCY_URL="https://lutfisk.net/script-dependencies"
 
 # ----- set up user-dirs
 mkdir -p ~/.config
@@ -19,7 +19,7 @@ cp i3/config i3/i3status.conf i3/volumectl.sh ~/.config/i3/
 FONT_DIR="$HOME/.local/share/fonts"
 
 fetch-font () {
-	curl "$DEPENDENCY_URL/$1" > "$FONT_DIR/$1"
+	curl "$DEPENDENCY_URL/font/$1" > "$FONT_DIR/$1"
 }
 
 mkdir -p $FONT_DIR
