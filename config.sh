@@ -13,7 +13,7 @@ mkdir ~/desktop
 
 # alacritty
 mkdir ~/.config/alacritty
-cp alacritty/alacritty.yml ~/.config/alacritty/
+cp alacritty/alacritty.toml ~/.config/alacritty/
 
 # fish
 mkdir ~/.config/fish
