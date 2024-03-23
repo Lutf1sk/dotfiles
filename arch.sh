@@ -45,3 +45,6 @@ cp picom/toggle-picom.sh ~/.config/picom/
 # ----- run distribution independent scripts
 bash tools.sh
 bash shared.sh
+
+# ----- append distribution dependent i3 settings
+cat i3/arch_config >> ~/.config/i3/config

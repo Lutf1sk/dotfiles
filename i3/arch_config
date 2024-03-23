@@ -1,0 +1,8 @@
+
+# ----- background processes (arch)
+exec --no-startup-id blueman-applet
+exec --no-startup-id nm-applet
+exec --no-startup-id feh --bg-fill ~/img/wallpaper
+
+# ----- program hotkeys (arch)
+bindsym $mod+c exec --no-startup-id ~/.config/picom/toggle-picom.sh

@@ -1,15 +1,8 @@
-# set Alt key
-#set $mod Mod1
-# set Super key
+
 set $mod Mod4
+set $font "pango:Ubuntu Mono 12"
 
-# this is setup for qwerty
-set $up l
-set $down k
-set $left j
-set $right semicolon
-
-# switch to workspace
+# ----- workspace switching
 bindsym $mod+1 workspace 1
 bindsym $mod+2 workspace 2
 bindsym $mod+3 workspace 3
@@ -21,7 +14,7 @@ bindsym $mod+8 workspace 8
 bindsym $mod+9 workspace 9
 bindsym $mod+0 workspace 10
 
-# move focused container to workspace
+# ----- move window between workspaces
 bindsym $mod+Shift+1 move container to workspace 1
 bindsym $mod+Shift+2 move container to workspace 2
 bindsym $mod+Shift+3 move container to workspace 3
@@ -33,103 +26,76 @@ bindsym $mod+Shift+8 move container to workspace 8
 bindsym $mod+Shift+9 move container to workspace 9
 bindsym $mod+Shift+0 move container to workspace 10
 
+# ----- set keyboard layout
 bindsym $mod+s exec --no-startup-id setxkbmap se
 bindsym $mod+u exec --no-startup-id setxkbmap us
 
-# start dmenu
+# ----- start dmenu
 bindsym $mod+d exec --no-startup-id dmenu_run -i -nb '#191919' -nf '#d64937' -sb '#d64937' -sf '#191919' -fn 'NotoMonoRegular:bold:pixelsize=14'
 
-# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+# ----- restart inplace (restarts wm, but preserves layout/session)
 bindsym $mod+Shift+r restart
 
-# exit i3
+# ----- exit
 bindsym $mod+Shift+e exit
 
-# reload the configuration file
+# ----- reload config
 bindsym $mod+Shift+c reload
 
-# kill focused window
+# ----- close window
 bindsym $mod+w kill
 
-# use Mouse+$mod to drag floating windows to their wanted position
+# ----- drag window
 floating_modifier $mod
 
-# toggle tiling / floating
+# ----- toggle floating
 bindsym $mod+space floating toggle
 
-# change focus
-bindsym $mod+$left focus left
-bindsym $mod+$down focus down
-bindsym $mod+$up focus up
-bindsym $mod+$right focus right
+# ----- change focus (vim bindings)
+bindsym $mod+j focus left
+bindsym $mod+k focus down
+bindsym $mod+l focus up
+bindsym $mod+semicolon focus right
 
-# alternatively, you can use the cursor keys:
+# ----- change focus (arrow keys)
 bindsym $mod+Left focus left
 bindsym $mod+Down focus down
 bindsym $mod+Up focus up
 bindsym $mod+Right focus right
 
-# move focused window
-bindsym $mod+Shift+$left move left
-bindsym $mod+Shift+$down move down
-bindsym $mod+Shift+$up move up
-bindsym $mod+Shift+$right move right
+# ----- move window (vim bindings)
+bindsym $mod+Shift+j move left
+bindsym $mod+Shift+k move down
+bindsym $mod+Shift+l move up
+bindsym $mod+Shift+semicolon move right
 
-# alternatively, you can use the cursor keys:
+# ----- move window (arrow keys)
 bindsym $mod+Shift+Left move left
 bindsym $mod+Shift+Down move down
 bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
-# switch to workspace with urgent window automatically
+# ----- switch workspace for urgent windows
 for_window [urgent=latest] focus
 
-# split orientation
+# ----- split
 default_orientation horizontal
 bindsym $mod+h split h
 bindsym $mod+v split v
 
-# toggle fullscreen
+# ----- fullscreen
 bindsym $mod+f fullscreen toggle
 
-# title font
-font pango:Noto Mono Regular 13
+# ----- window title font
+font $font
 
-# bluetooth
-exec --no-startup-id blueman-applet
-
-# network
-exec --no-startup-id nm-applet
-
-# feh sets wallpaper
-exec --no-startup-id feh --bg-fill ~/img/wallpaper
-
-# terminal
+# ----- program hotkeys
 bindsym $mod+Return exec --no-startup-id alacritty;focus
-
-# file manager
 bindsym $mod+e exec --no-startup-id pcmanfm-qt;focus
-# system monitor
 bindsym $mod+t exec --no-startup-id qps;focus
-
-# pavucontrol
 bindsym $mod+p exec --no-startup-id pavucontrol-qt
 
-# floating enabled from some programs - find with xprop
-
-for_window [class="pcmanfm"] floating enable
-for_window [class="Pavucontrol"] floating enable
-for_window [class="Xfce4-taskmanager"] floating enable
-for_window [class="qps"] floating enable
-for_window [title="Copying"] floating enable
-for_window [title="Deleting"] floating enable
-for_window [title="Moving"] floating enable
-for_window [window_role="pop-up"] floating enable
-for_window [window_role="^Preferences$"] floating enable
-
-for_window [title="QEMU.*"] floating enable
-
-# media keys
+# ----- media keys
 bindsym XF86AudioRaiseVolume exec --no-startup-id ~/.config/i3/volumectl.sh +1%
 bindsym XF86AudioLowerVolume exec --no-startup-id ~/.config/i3/volumectl.sh -1%
 bindsym XF86AudioMute exec --no-startup-id "FIXME"
@@ -139,32 +105,43 @@ bindsym XF86AudioNext exec --no-startup-id playerctl next
 bindsym XF86AudioPrev exec --no-startup-id playerctl previous
 bindsym XF86AudioStop exec --no-startup-id playerctl stop
 
-bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight -inc 20 # increase screen brightness
-bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -dec 20 # decrease screen brightness
+bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight -inc 20
+bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -dec 20
 
-default_border pixel 1
-default_floating_border pixel 1
+# ----- auto-float
+for_window [class="pcmanfm"] floating enable
+for_window [class="Pavucontrol"] floating enable
+for_window [class="qps"] floating enable
+for_window [title="Copying"] floating enable
+for_window [title="Deleting"] floating enable
+for_window [title="Moving"] floating enable
+for_window [window_role="pop-up"] floating enable
+for_window [window_role="^Preferences$"] floating enable
+for_window [title="QEMU.*"] floating enable
 
-# popups during fullscreen mode
+# ----- fullscreen popups
 popup_during_fullscreen smart
 
+# ----- borders
+default_border pixel 1
+default_floating_border pixel 1
+smart_gaps on
+
+# ----- gaps
 gaps inner 5
 gaps outer 0
-smart_gaps on
 smart_borders on
 
-bindsym $mod+c exec --no-startup-id ~/.config/picom/toggle-picom.sh
-
+# ----- bar
 bar {
     position top
     height 20
 
     workspace_buttons yes
-    font pango:Noto Sans 11
+    font $font
     separator_symbol ":"
     tray_output primary
 
-# 	i3bar_command i3bar --transparency
     status_command i3status -c ~/.config/i3/i3status.conf
 
     colors {

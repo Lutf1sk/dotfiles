@@ -20,9 +20,15 @@ sudo sv up dbus
 sudo ln -s /etc/sv/polkitd /var/service/
 sudo sv up polkitd
 
+# ----- copy sway launch script
+cp sway.sh ~/sway.sh
+
 # ----- copy .bashrc
 cp void_bashrc ~/.bashrc
 
 # ----- run distribution independent scripts
 bash tools.sh
 bash shared.sh
+
+# ----- append distribution dependent i3 settings
+cat i3/void_config >> ~/.config/i3/config
