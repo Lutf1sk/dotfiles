@@ -33,3 +33,5 @@ alias zip="zip -r"
 
 alias cloc="lcloc -c"
 alias lmodorg="lmodorg -c"
+
+neofetch

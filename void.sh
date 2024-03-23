@@ -8,7 +8,7 @@ sudo xbps-install -Su void-repo-multilib void-repo-multilib-nonfree void-repo-no
 util="psmisc curl"
 dev="git make gcc clang nasm"
 mesa="mesa mesa-dri mesa-vaapi mesa-vdpau"
-terminal="alacritty bash"
+terminal="alacritty bash neofetch"
 session="polkit dbus elogind dbus-elogind"
 window="sway xorg-server-xwayland xorg-fonts i3status dmenu"
 xdg="xdg-desktop-portal xdg-user-dirs xdg-utils"
