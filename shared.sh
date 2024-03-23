@@ -35,3 +35,5 @@ curl "$DEPENDENCY_URL/wallpaper" > ~/img/wallpaper
 git config --global pull.rebase false
 git config --global core.editor led
 git config --global credential.helper store
+git config --global user.email "lutfisk@lutfisk.net"
+git config --global user.name "Alex Edin"
