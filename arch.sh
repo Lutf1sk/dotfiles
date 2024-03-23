@@ -5,7 +5,7 @@ set -e
 util="curl"
 dev="base-devel git make gcc clang nasm"
 terminal="alacritty fish"
-window="xorg xorg-xinit i3-gaps i3stats dmenu feh"
+window="xorg xorg-xinit i3-gaps i3status dmenu feh"
 sound="wireplumber pipewire pipewire-audio pipewire-alsa pipewire-pulse pipewire-jack"
 
 packages="$util $dev $terminal $window $sound"
@@ -16,6 +16,7 @@ sudo pacman -S --noconfirm --needed go git base-devel
 git clone "https://www.github.com/Jguer/yay.git"
 make -C yay
 sudo make -C yay install
+sudo rm -r yay
 
 # ----- enable services
 systemctl --user enable wireplumber
