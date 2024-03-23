@@ -1,4 +1,5 @@
 #!/bin/bash
+set -e
 
 # ----- add required repositories
 sudo xbps-install -Su void-repo-multilib void-repo-multilib-nonfree void-repo-nonfree

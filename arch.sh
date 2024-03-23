@@ -1,4 +1,5 @@
 #!/bin/sh
+set -e
 
 # ----- install system packages
 util="curl"

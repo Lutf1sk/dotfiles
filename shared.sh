@@ -1,4 +1,5 @@
 #!/bin/bash
+set -e
 
 DEPENDENCY_URL="https://lutfisk.net/script-dependencies"
 
