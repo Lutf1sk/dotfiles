@@ -1,8 +1,13 @@
 #!/bin/bash
 set -e
 
+# ----- perform system update, good to keep here in case
+#       outdated packages are installed from the iso
+sudo xbps-install -Suy xbps
+sudo xbps-install -Suy
+
 # ----- add required repositories
-sudo xbps-install -Su void-repo-multilib void-repo-multilib-nonfree void-repo-nonfree
+sudo xbps-install -Suy void-repo-multilib void-repo-multilib-nonfree void-repo-nonfree
 
 # ----- install system packages
 util="psmisc curl"
@@ -19,9 +24,7 @@ sudo xbps-install -Suy $util $dev $mesa $terminal $session $window $xdg $audio $
 
 # ----- enable services
 sudo ln -sf /etc/sv/dbus /var/service/
-sudo sv up dbus
 sudo ln -sf /etc/sv/polkitd /var/service/
-sudo sv up polkitd
 
 # ----- set up pipewire
 sudo mkdir -p /etc/pipewire/pipewire.conf.d
