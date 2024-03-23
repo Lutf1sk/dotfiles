@@ -2,5 +2,6 @@
 # ----- background processes (void)
 exec --no-startup-id swaymsg output Virtual-1 mode 1920x1080
 exec --no-startup-id swaybg -i ~/img/wallpaper
+exec --no-startup-id pipewire
 
 # ----- program hotkeys (void)
