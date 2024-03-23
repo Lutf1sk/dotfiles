@@ -33,6 +33,11 @@ fetch-font UbuntuMono-BoldItalic.ttf
 fetch-font UbuntuMono-Italic.ttf
 fetch-font UbuntuMono-Regular.ttf
 
+# ----- download kvantum theme
+sudo mkdir -p /usr/lib64/qt5/plugins/styles
+curl "$DEPENDENCY_URL/libkvantum.so" > _libkvantum.so
+sudo mv _libkvantum.so /usr/lib64/qt5/plugins/styles/libkvantum.so
+
 # ----- download wallpaper
 curl "$DEPENDENCY_URL/wallpaper" > ~/img/wallpaper
 
