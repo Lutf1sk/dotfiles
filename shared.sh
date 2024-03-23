@@ -15,6 +15,10 @@ cp alacritty.toml ~/.config/alacritty/
 mkdir -p ~/.config/i3
 cp i3/config i3/i3status.conf i3/volumectl.sh ~/.config/i3/
 
+# ----- copy strawberry config
+mkdir -p ~/.config/strawberry
+cp strawberry.conf ~/.config/strawberry/
+
 # ----- download terminal fonts
 FONT_DIR="$HOME/.local/share/fonts"
 
