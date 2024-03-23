@@ -12,8 +12,9 @@ session="polkit dbus elogind dbus-elogind"
 window="sway xorg-server-xwayland xorg-fonts i3status dmenu"
 xdg="xdg-desktop-portal xdg-user-dirs xdg-utils"
 audio="pipewire alsa-pipewire libjack-pipewire libspa-bluetooth"
+gui="firefox pcmanfm-qt pavucontrol-qt qps strawberry"
 
-sudo xbps-install -Suy $util $dev $mesa $terminal $session $window $xdg $audio
+sudo xbps-install -Suy $util $dev $mesa $terminal $session $window $xdg $audio $gui
 
 # ----- enable services
 sudo ln -sf /etc/sv/dbus /var/service/
