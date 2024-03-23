@@ -9,8 +9,6 @@ export WLR_DRM_DEVICES=/dev/dri/card0
 export WLR_RENDERER_ALLOW_SOFTWARE=1
 
 export SWAY_LOG=/tmp/sway_log
-
-exec >$SWAY_LOG
-exec 2>>$SWAY_LOG
+exec >$SWAY_LOG 2>&1
 
 exec sway --unsupported-gpu --verbose
