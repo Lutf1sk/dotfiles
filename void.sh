@@ -10,20 +10,7 @@ sudo xbps-install -Suy
 sudo xbps-install -Suy void-repo-multilib void-repo-multilib-nonfree void-repo-nonfree
 
 
-if [ -z ${MINIMAL+x} ]; then
-	# ----- install packages
-	sudo xbps-install -Suy psmisc curl git make gcc clang nasm bash neofetch
-
-	# ----- copy .bashrc
-	cp bash/bashrc ~/.bashrc
-	cat bash/bashrc_void >> ~/.bashrc
-
-	# ----- run distribution independent scripts
-	bash tools.sh
-
-	# ----- set git editor
-	git config --global core.editor led
-else
+if [ -z "$MINIMAL" ]; then
 	# ----- install packages
 	util="psmisc curl"
 	dev="git make gcc clang nasm"
@@ -63,5 +50,18 @@ else
 
 	# ----- append distribution dependent i3 settings
 	cat i3/void_config >> ~/.config/i3/config
+else
+	# ----- install packages
+	sudo xbps-install -Suy psmisc curl git make gcc clang nasm bash neofetch
+
+	# ----- copy .bashrc
+	cp bash/bashrc ~/.bashrc
+	cat bash/bashrc_void >> ~/.bashrc
+
+	# ----- run distribution independent scripts
+	bash tools.sh
+
+	# ----- set git editor
+	git config --global core.editor led
 fi
 
