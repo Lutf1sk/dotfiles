@@ -47,3 +47,6 @@ git config --global core.editor led
 git config --global credential.helper store
 git config --global user.email "lutfisk@lutfisk.net"
 git config --global user.name "Alex Edin"
+
+# ----- copy scripts
+sudo cp scripts/* /usr/local/bin/

@@ -1,4 +1,4 @@
-# .bashrc
+#!/bin/bash
 
 [[ $- != *i* ]] && return
 PS1='\[\e[92m\]\u\[\e[0m\]@\h \[\e[32m\]\w\[\e[0m\]> '
@@ -8,12 +8,6 @@ alias ls="ls --color=always"
 alias mkd="mkdir"
 alias mkf="touch"
 alias mk="make"
-
-alias pac="sudo xbps-install"
-alias pacy="sudo xbps-install -S"
-alias pacs="xbps-query -Rs"
-alias pacu="sudo xbps-install -Su"
-alias pacr="sudo xbps-remove -R"
 
 alias gadd="git add"
 alias gmv="git mv"
@@ -33,5 +27,8 @@ alias zip="zip -r"
 
 alias cloc="lcloc -c"
 alias lmodorg="lmodorg -c"
+alias lpass="sudo -E lpass"
+
+alias ..="cd ../"
 
 neofetch

@@ -9,41 +9,59 @@ sudo xbps-install -Suy
 # ----- add required repositories
 sudo xbps-install -Suy void-repo-multilib void-repo-multilib-nonfree void-repo-nonfree
 
-# ----- install system packages
-util="psmisc curl"
-dev="git make gcc clang nasm"
-mesa="mesa mesa-dri mesa-vaapi mesa-vdpau"
-terminal="alacritty bash neofetch"
-session="polkit dbus elogind dbus-elogind"
-window="sway xorg-server-xwayland xorg-fonts i3status dmenu"
-xdg="xdg-desktop-portal xdg-user-dirs xdg-utils"
-audio="pipewire alsa-pipewire libjack-pipewire libspa-bluetooth"
-gui="firefox pcmanfm-qt pavucontrol-qt qps strawberry"
 
-sudo xbps-install -Suy $util $dev $mesa $terminal $session $window $xdg $audio $gui
+if [ -z ${MINIMAL+x} ]; then
+	# ----- install packages
+	sudo xbps-install -Suy psmisc curl git make gcc clang nasm bash neofetch
 
-# ----- enable services
-sudo ln -sf /etc/sv/dbus /var/service/
-sudo ln -sf /etc/sv/polkitd /var/service/
+	# ----- copy .bashrc
+	cp bash/bashrc ~/.bashrc
+	cat bash/bashrc_void >> ~/.bashrc
 
-# ----- set up pipewire
-sudo mkdir -p /etc/pipewire/pipewire.conf.d
-sudo ln -sf /usr/share/examples/wireplumber/10-wireplumber.conf /etc/pipewire/pipewire.conf.d/
-sudo ln -sf /usr/share/examples/pipewire/20-pipewire-pulse.conf /etc/pipewire/pipewire.conf.d/
+	# ----- run distribution independent scripts
+	bash tools.sh
 
-sudo mkdir -p /etc/alsa/conf.d
-sudo ln -sf /usr/share/alsa/alsa.conf.d/50-pipewire.conf /etc/alsa/conf.d/
-sudo ln -sf /usr/share/alsa/alsa.conf.d/99-pipewire-default.conf /etc/alsa/conf.d/
+	# ----- set git editor
+	git config --global core.editor led
+else
+	# ----- install packages
+	util="psmisc curl"
+	dev="git make gcc clang nasm"
+	mesa="mesa mesa-dri mesa-vaapi mesa-vdpau"
+	terminal="alacritty bash neofetch"
+	session="polkit dbus elogind dbus-elogind"
+	window="sway xorg-server-xwayland xorg-fonts i3status dmenu"
+	xdg="xdg-desktop-portal xdg-user-dirs xdg-utils"
+	audio="pipewire alsa-pipewire libjack-pipewire libspa-bluetooth"
+	gui="firefox pcmanfm-qt pavucontrol-qt qps strawberry"
 
-# ----- copy sway launch script
-cp sway.sh ~/sway.sh
+	sudo xbps-install -Suy $util $dev $mesa $terminal $session $window $xdg $audio $gui
 
-# ----- copy .bashrc
-cp void_bashrc ~/.bashrc
+	# ----- enable services
+	sudo ln -sf /etc/sv/dbus /var/service/
+	sudo ln -sf /etc/sv/polkitd /var/service/
 
-# ----- run distribution independent scripts
-bash tools.sh
-bash shared.sh
+	# ----- set up pipewire
+	sudo mkdir -p /etc/pipewire/pipewire.conf.d
+	sudo ln -sf /usr/share/examples/wireplumber/10-wireplumber.conf /etc/pipewire/pipewire.conf.d/
+	sudo ln -sf /usr/share/examples/pipewire/20-pipewire-pulse.conf /etc/pipewire/pipewire.conf.d/
 
-# ----- append distribution dependent i3 settings
-cat i3/void_config >> ~/.config/i3/config
+	sudo mkdir -p /etc/alsa/conf.d
+	sudo ln -sf /usr/share/alsa/alsa.conf.d/50-pipewire.conf /etc/alsa/conf.d/
+	sudo ln -sf /usr/share/alsa/alsa.conf.d/99-pipewire-default.conf /etc/alsa/conf.d/
+
+	# ----- copy sway launch script
+	cp sway.sh ~/sway.sh
+
+	# ----- copy .bashrc
+	cp bash/bashrc ~/.bashrc
+	cat bash/bashrc_void >> ~/.bashrc
+
+	# ----- run distribution independent scripts
+	bash tools.sh
+	bash shared.sh
+
+	# ----- append distribution dependent i3 settings
+	cat i3/void_config >> ~/.config/i3/config
+done
+

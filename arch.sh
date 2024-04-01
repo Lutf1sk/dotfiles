@@ -39,6 +39,10 @@ cp xinitrc ~/.xinitrc
 mkdir -p ~/.config/fish
 cp arch_config.fish ~/.config/fish/
 
+# ----- copy bashrc
+cp bash/bashrc ~/.bashrc
+cat bash/bashrc_arch >> ~/.bashrc
+
 # ----- copy picom configs
 mkdir -p ~/.config/picom
 cp picom/picom.conf ~/.config/picom/

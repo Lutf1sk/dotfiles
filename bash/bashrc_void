@@ -1,0 +1,6 @@
+
+alias pac="sudo xbps-install"
+alias pacy="sudo xbps-install -S"
+alias pacs="xbps-query -Rs"
+alias pacu="sudo xbps-install -Su"
+alias pacr="sudo xbps-remove -R"
