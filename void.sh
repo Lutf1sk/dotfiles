@@ -63,5 +63,5 @@ else
 
 	# ----- append distribution dependent i3 settings
 	cat i3/void_config >> ~/.config/i3/config
-done
+fi
 
