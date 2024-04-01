@@ -6,11 +6,10 @@ set -e
 sudo xbps-install -Suy xbps
 sudo xbps-install -Suy
 
-# ----- add required repositories
-sudo xbps-install -Suy void-repo-multilib void-repo-multilib-nonfree void-repo-nonfree
-
-
 if [ -z "$MINIMAL" ]; then
+	# ----- add nonfree and multilib repositories
+	sudo xbps-install -Suy void-repo-multilib void-repo-multilib-nonfree void-repo-nonfree
+
 	# ----- install packages
 	util="psmisc curl"
 	dev="git make gcc clang nasm"
