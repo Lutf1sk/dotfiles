@@ -6,7 +6,20 @@ set -e
 sudo xbps-install -Suy xbps
 sudo xbps-install -Suy
 
-if [ -z "$MINIMAL" ]; then
+if [ "$MINIMAL" != "" ]; then
+	# ----- install packages
+	sudo xbps-install -Suy psmisc curl git make gcc clang nasm bash neofetch ufw
+
+	# ----- copy .bashrc
+	cp bash/bashrc ~/.bashrc
+	cat bash/bashrc_void >> ~/.bashrc
+
+	# ----- run distribution independent scripts
+	bash tools.sh
+
+	# ----- set git editor
+	git config --global core.editor led
+else
 	# ----- add nonfree and multilib repositories
 	sudo xbps-install -Suy void-repo-multilib void-repo-multilib-nonfree void-repo-nonfree
 
@@ -49,18 +62,33 @@ if [ -z "$MINIMAL" ]; then
 
 	# ----- append distribution dependent i3 settings
 	cat i3/void_config >> ~/.config/i3/config
-else
-	# ----- install packages
-	sudo xbps-install -Suy psmisc curl git make gcc clang nasm bash neofetch
-
-	# ----- copy .bashrc
-	cp bash/bashrc ~/.bashrc
-	cat bash/bashrc_void >> ~/.bashrc
-
-	# ----- run distribution independent scripts
-	bash tools.sh
-
-	# ----- set git editor
-	git config --global core.editor led
 fi
 
+host () {
+	cut -d ' ' -f 1 <<< $(getent hosts $1)
+}
+
+# ----- set up firewall
+sudo xbps-install ufw
+sudo ln -sf /etc/sv/ufw /var/service/
+
+sudo ufw enable
+sudo ufw default deny incoming
+
+if [ "$STRICT" != "" ]; then
+	# ----- deny all outgoing
+	sudo ufw default deny outgoing
+
+	# ----- allow outgoing dns traffic
+	NAMESERVER="$(cut -d ' ' -f 2 <<< $(cat /etc/resolv.conf | grep nameserver))"
+	sudo ufw allow out to $NAMESERVER port 53,853 proto tcp
+	sudo ufw allow out to $NAMESERVER port 53,853 proto udp
+
+	# ----- allow outgoing traffic to void repos
+	for REPO in "$(xbps-query -L)"; do
+		URL=$(cut -d ' ' -f 2 <<< $REPO)
+		PROTO=$(cut -d ':' -f 1 <<< $URL)
+		ADDR=$(host $(cut -d '/' -f 3 <<< $URL))
+		sudo ufw allow out to $ADDR port $PROTO
+	done
+fi

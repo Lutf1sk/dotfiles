@@ -1,14 +1,12 @@
 #!/bin/bash
 
-[[ $- != *i* ]] && return
-PS1='\[\e[92m\]\u\[\e[0m\]@\h \[\e[32m\]\w\[\e[0m\]> '
-
+# ----- filesystem
+alias ..="cd ../"
 alias ls="ls --color=always"
-
 alias mkd="mkdir"
 alias mkf="touch"
-alias mk="make"
 
+# ----- git
 alias gadd="git add"
 alias gmv="git mv"
 alias grm="git rm"
@@ -22,13 +20,34 @@ alias glog="git log"
 alias gamnd="git commit --amend"
 alias grst="git reset"
 
-alias cls="clear"
-alias zip="zip -r"
+# ----- make
+alias mk="make"
+alias mkc="make clean"
+alias mkr="make run"
+alias mki="sudo -E make install"
 
+# ----- libvirt
+alias virsh="virsh -c qemu:///system"
+alias virt-viewer="virt-viewer -c qemu:///system"
+
+# ----- firewall
+alias fw="sudo ufw"
+alias fwstat="sudo ufw status numbered"
+
+host () {
+	cut -d ' ' -f 1 <<< $(getent hosts $1)
+}
+
+# ----- custom
 alias cloc="lcloc -c"
 alias lmodorg="lmodorg -c"
 alias lpass="sudo -E lpass"
 
-alias ..="cd ../"
+# ----- misc
+alias cls="clear"
+alias zip="zip -r"
+
+[[ $- != *i* ]] && return
+PS1='\[\e[92m\]\u\[\e[0m\]@\h \[\e[32m\]\w\[\e[0m\]> '
 
 neofetch
