@@ -32,9 +32,10 @@ else
 	window="sway xorg-server-xwayland xorg-fonts i3status dmenu"
 	xdg="xdg-desktop-portal xdg-user-dirs xdg-utils"
 	audio="pipewire alsa-pipewire libjack-pipewire libspa-bluetooth"
-	gui="kvantum qt5ct papirus-icon-theme papirus-folders firefox pcmanfm-qt pavucontrol-qt qps strawberry"
+	theme="kvantum qt5ct papirus-icon-theme papirus-folders"
+	gui="firefox pcmanfm-qt lxqt-archiver pavucontrol-qt qps strawberry"
 
-	sudo xbps-install -Suy $util $dev $mesa $terminal $session $window $xdg $audio $gui
+	sudo xbps-install -Suy $util $dev $mesa $terminal $session $window $xdg $audio $theme $gui
 
 	# ----- enable services
 	sudo ln -sf /etc/sv/dbus /var/service/
@@ -69,7 +70,7 @@ host () {
 }
 
 # ----- set up firewall
-sudo xbps-install ufw
+sudo xbps-install -Suy ufw
 sudo ln -sf /etc/sv/ufw /var/service/
 
 sudo ufw enable

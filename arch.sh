@@ -8,8 +8,9 @@ terminal="alacritty fish"
 window="xorg xorg-xinit i3-gaps i3status dmenu feh"
 sound="wireplumber pipewire pipewire-audio pipewire-alsa pipewire-pulse pipewire-jack"
 theme="kvantum qt5ct papirus-icon-theme"
+gui="firefox pcmanfm-qt lxqt-archiver pavucontrol-qt qps strawberry"
 
-packages="$util $dev $terminal $window $sound $theme pcmanfm-qt"
+packages="$util $dev $terminal $window $sound $theme $gui"
 sudo pacman -S --noconfirm --needed $packages
 
 # ----- install yay
