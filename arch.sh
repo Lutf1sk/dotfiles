@@ -7,8 +7,9 @@ dev="base-devel git make gcc clang nasm"
 terminal="alacritty fish"
 window="xorg xorg-xinit i3-gaps i3status dmenu feh"
 sound="wireplumber pipewire pipewire-audio pipewire-alsa pipewire-pulse pipewire-jack"
+theme="kvantum qt5ct papirus-icon-theme"
 
-packages="$util $dev $terminal $window $sound"
+packages="$util $dev $terminal $window $sound $theme pcmanfm-qt"
 sudo pacman -S --noconfirm --needed $packages
 
 # ----- install yay
@@ -17,6 +18,9 @@ git clone "https://www.github.com/Jguer/yay.git"
 make -C yay
 sudo make -C yay install
 sudo rm -r yay
+
+# ----- install aur packages
+yay -S --noconfirm --needed papirus-folders
 
 # ----- enable services
 systemctl --user enable wireplumber

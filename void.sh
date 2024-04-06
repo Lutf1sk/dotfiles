@@ -32,7 +32,7 @@ else
 	window="sway xorg-server-xwayland xorg-fonts i3status dmenu"
 	xdg="xdg-desktop-portal xdg-user-dirs xdg-utils"
 	audio="pipewire alsa-pipewire libjack-pipewire libspa-bluetooth"
-	gui="firefox pcmanfm-qt pavucontrol-qt qps strawberry"
+	gui="kvantum qt5ct papirus-icon-theme papirus-folders firefox pcmanfm-qt pavucontrol-qt qps strawberry"
 
 	sudo xbps-install -Suy $util $dev $mesa $terminal $session $window $xdg $audio $gui
 
