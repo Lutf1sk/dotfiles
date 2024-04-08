@@ -2,7 +2,7 @@
 
 # ----- filesystem
 alias ..="cd ../"
-alias ls="ls --color=always"
+alias ls="lls -c"
 alias mkd="mkdir"
 alias mkf="touch"
 
