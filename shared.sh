@@ -41,10 +41,10 @@ fetch-font () {
 }
 
 mkdir -p $FONT_DIR
-fetch-font UbuntuMono-Bold.ttf
-fetch-font UbuntuMono-BoldItalic.ttf
-fetch-font UbuntuMono-Italic.ttf
-fetch-font UbuntuMono-Regular.ttf
+fetch-font Cousine-Bold.ttf
+fetch-font Cousine-BoldItalic.ttf
+fetch-font Cousine-Italic.ttf
+fetch-font Cousine-Regular.ttf
 
 # ----- download kvantum theme
 # sudo mkdir -p /usr/lib64/qt5/plugins/styles
