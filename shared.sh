@@ -33,6 +33,10 @@ cp lxqt.conf ~/.config/lxqt/
 mkdir -p ~/.config/qt5ct
 cp qt5ct.conf ~/.config/qt5ct/
 
+# ----- copy pulseaudio config
+mkdir -p ~/.config/pulse
+cp pulse-daemon.conf ~/.config/pulse/daemon.conf
+
 # ----- download terminal fonts
 FONT_DIR="$HOME/.local/share/fonts"
 
