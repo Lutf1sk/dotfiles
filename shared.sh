@@ -65,6 +65,7 @@ curl "$DEPENDENCY_URL/wallpaper" > ~/img/wallpaper
 git config --global pull.rebase false
 git config --global core.editor led
 git config --global credential.helper store
+git config --global init.defaultBranch main
 
 # ----- copy scripts
 sudo cp scripts/* /usr/local/bin/
