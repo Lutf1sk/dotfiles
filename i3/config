@@ -52,10 +52,10 @@ floating_modifier $mod
 bindsym $mod+space floating toggle
 
 # ----- change focus (vim bindings)
-bindsym $mod+j focus left
-bindsym $mod+k focus down
-bindsym $mod+l focus up
-bindsym $mod+semicolon focus right
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
 
 # ----- change focus (arrow keys)
 bindsym $mod+Left focus left
@@ -64,10 +64,10 @@ bindsym $mod+Up focus up
 bindsym $mod+Right focus right
 
 # ----- move window (vim bindings)
-bindsym $mod+Shift+j move left
-bindsym $mod+Shift+k move down
-bindsym $mod+Shift+l move up
-bindsym $mod+Shift+semicolon move right
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
 
 # ----- move window (arrow keys)
 bindsym $mod+Shift+Left move left
@@ -128,9 +128,9 @@ default_floating_border pixel 1
 smart_gaps on
 
 # ----- gaps
-gaps inner 5
+gaps inner 0
 gaps outer 0
-smart_borders on
+smart_borders off
 
 # ----- bar
 bar {

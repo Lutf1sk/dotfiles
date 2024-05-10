@@ -15,5 +15,5 @@ export QT_QPA_PLATFORMTHEME=qt5ct
 export SWAY_LOG=/tmp/sway_log
 exec >$SWAY_LOG 2>&1
 
-sway --unsupported-gpu --verbose
+dbus-launch --exit-with-session sway --unsupported-gpu --verbose
 killall -w wireplumber pipewire

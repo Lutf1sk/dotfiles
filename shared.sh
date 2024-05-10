@@ -37,6 +37,9 @@ cp qt5ct.conf ~/.config/qt5ct/
 mkdir -p ~/.config/pulse
 cp pulse-daemon.conf ~/.config/pulse/daemon.conf
 
+# ----- copy vim config
+cp vimrc ~/.vimrc
+
 # ----- download terminal fonts
 FONT_DIR="$HOME/.local/share/fonts"
 
