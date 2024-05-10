@@ -17,8 +17,11 @@ alias gpull="git pull origin"
 alias gstat="git status"
 alias gclone="git clone --recursive"
 alias glog="git log"
-alias gamnd="git commit --amend"
-alias grst="git reset"
+alias gamend="git commit --amend"
+alias gcheck="git checkout"
+alias grest="git restore"
+alias gremote="git remote"
+alias gconf="git config --global"
 
 # ----- make
 alias mk="make"
@@ -46,6 +49,7 @@ alias lpass="sudo -E lpass"
 # ----- misc
 alias cls="clear"
 alias zip="zip -r"
+alias diff="diff --color=always"
 
 if [ "$LED" == "1" ]; then
 	PS1='\[\e[93mled\e[0m >\] \[\e[92m\]\u\[\e[0m\]@\h \[\e[32m\]\w\[\e[0m\]> '
