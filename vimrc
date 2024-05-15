@@ -12,3 +12,7 @@ set smartcase
 set noswapfile
 set nobackup
 
+set scrolloff=16
+
+set incsearch
+
