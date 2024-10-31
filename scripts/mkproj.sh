@@ -2,7 +2,7 @@
 
 set -e
 
-URL="http://localhost:7734/"
+URL="https://lutfisk.net/"
 GH_URL="https://github.com/Lutf1sk/"
 MAIN_C="$1/src/main.c"
 
