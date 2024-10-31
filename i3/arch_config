@@ -6,3 +6,7 @@ exec --no-startup-id feh --bg-fill ~/img/wallpaper
 
 # ----- program hotkeys (arch)
 bindsym $mod+c exec --no-startup-id ~/.config/picom/toggle-picom.sh
+
+bindsym $mod+s exec --no-startup-id setxkbmap se
+bindsym $mod+u exec --no-startup-id setxkbmap us
+
