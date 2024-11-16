@@ -76,7 +76,7 @@ for_window [urgent=latest] focus
 
 # ----- split
 default_orientation horizontal
-bindsym $mod+h split h
+bindsym $mod+x split h
 bindsym $mod+v split v
 
 # ----- fullscreen

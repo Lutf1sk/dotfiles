@@ -1,5 +1,3 @@
-#!/bin/bash
-set -e
 
 # ----- perform system update, good to keep here in case
 #       outdated packages are installed from the iso
@@ -52,6 +50,7 @@ else
 
 	# ----- copy sway launch script
 	cp sway.sh ~/sway.sh
+	cp i3/toggle-keyboard-layout.sh ~/.config/i3/
 
 	# ----- copy .bashrc
 	cp bash/bashrc ~/.bashrc
