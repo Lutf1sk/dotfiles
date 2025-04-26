@@ -2,10 +2,6 @@
 vim.opt.nu = true
 vim.opt.relativenumber = true
 
-vim.opt.tabstop = 6
-vim.opt.softtabstop = 6
-vim.opt.shiftwidth = 6
-
 vim.opt.smartindent = true
 
 vim.opt.wrap = true
@@ -24,3 +20,15 @@ vim.opt.scrolloff = 16
 
 vim.opt.updatetime = 50
 
+-- Project specific
+
+tabsize = 4
+
+if vim.fn.getcwd() == "/home/lutfisk/src/bw/game" then
+  tabsize = 2
+  vim.opt.expandtab   = true
+end
+
+vim.opt.tabstop     = tabsize
+vim.opt.softtabstop = tabsize
+vim.opt.shiftwidth  = tabsize
