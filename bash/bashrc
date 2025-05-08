@@ -23,6 +23,7 @@ alias grest="git restore"
 alias gremote="git remote"
 alias gconf="git config --global"
 alias gco="git checkout"
+alias gbranch="git branch"
 
 # ----- make
 alias mk="make"
