@@ -12,27 +12,6 @@ mkdir -p ~/img ~/doc ~/src ~/audio ~/dl ~/desktop
 mkdir -p ~/.config/alacritty
 cp alacritty.toml ~/.config/alacritty/
 
-# ----- copy configs for i3/sway
-mkdir -p ~/.config/i3
-cp i3/config i3/i3status.conf i3/volumectl.sh ~/.config/i3/
-
-# ----- copy strawberry config
-mkdir -p ~/.config/strawberry
-cp strawberry.conf ~/.config/strawberry/
-
-# ----- copy pcmanfm-qt config
-mkdir -p ~/.config/pcmanfm-qt/default
-cp pcmanfm-qt.conf ~/.config/pcmanfm-qt/default/settings.conf
-
-# ----- copy lxqt configs
-mkdir -p ~/.config/lxqt
-cp lxqt-archiver.conf ~/.config/lxqt/
-cp lxqt.conf ~/.config/lxqt/
-
-# ----- copy qt5ct config
-mkdir -p ~/.config/qt5ct
-cp qt5ct.conf ~/.config/qt5ct/
-
 # ----- copy pulseaudio config
 mkdir -p ~/.config/pulse
 cp pulse-daemon.conf ~/.config/pulse/daemon.conf
@@ -52,17 +31,6 @@ fetch-font Cousine-Bold.ttf
 fetch-font Cousine-BoldItalic.ttf
 fetch-font Cousine-Italic.ttf
 fetch-font Cousine-Regular.ttf
-
-# ----- download kvantum theme
-# sudo mkdir -p /usr/lib64/qt5/plugins/styles
-# curl "$DEPENDENCY_URL/libkvantum.so" > _libkvantum.so
-# sudo mv _libkvantum.so /usr/lib64/qt5/plugins/styles/libkvantum.so
-
-# ----- set icon theme colors
-papirus-folders -C green -u -t Papirus-Dark
-
-# ----- download wallpaper
-curl "$DEPENDENCY_URL/wallpaper" > ~/img/wallpaper
 
 # ----- configure git
 git config --global pull.rebase false

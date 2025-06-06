@@ -1,40 +1,43 @@
 
 [colors.bright]
-black = "#222222"
-blue = "#0000FF"
-cyan = "#00FFFF"
-green = "#00FF00"
-magenta = "#FF00FF"
-red = "#FF0000"
-white = "#FFFFFF"
-yellow = "#FFFF00"
+black   = "#121212"
+blue    = "#83a598"
+cyan    = "#8ec07c"
+green   = "#b8bb26"
+magenta = "#d3869b"
+red     = "#fb4934"
+white   = "#fbf1c7"
+yellow  = "#fabd2f"
 
 [colors.normal]
-black = "#000000"
-blue = "#0000CC"
-cyan = "#00CCCC"
-green = "#00CC00"
-magenta = "#CC00CC"
-red = "#CC0000"
-white = "#CCCCCC"
-yellow = "#CCCC00"
+black   = "#080808"
+blue    = "#458588"
+cyan    = "#689d6a"
+green   = "#98971a"
+magenta = "#b16286"
+red     = "#cc241d"
+white   = "#a89984"
+yellow  = "#d79921"
 
 [colors.primary]
-background = "#000000"
-foreground = "#FFFFFF"
+background = "#080808"
+foreground = "#ebdbb2"
+
+[cursor]
+blink_interval = 500
 
 [cursor.style]
-blinking = "On"
-shape = "Beam"
+blinking       = "Always"
+shape          = "Beam"
 
 [font]
-size = 11
+size = 10
 
 [font.normal]
 family = "Cousine"
 
 [window]
-opacity = 0.9
+opacity = 1.0
 
 [general]
-live_config_reload = true
+live_config_reload = false
