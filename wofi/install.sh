@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 TARGET_DIR="$HOME/.config/wofi"
 TARGET="$TARGET_DIR/style.css"
 
@@ -6,9 +6,9 @@ cd $(dirname $0)
 
 if   [ "$MODE" == "alpine" ]; then
 	doas apk add wofi
-elif [ "$HOME" == "void"   ]; then
-	sudo xbps -S wofi
-elif [ "$HOME" == "arch"   ]; then
+elif [ "$MODE" == "void"   ]; then
+	sudo xbps-install -yu wofi
+elif [ "$MODE" == "arch"   ]; then
 	sudo pacman -S wofi
 fi
 

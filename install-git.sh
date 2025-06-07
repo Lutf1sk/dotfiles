@@ -1,9 +1,9 @@
-#!/bin/sh
+#!/bin/bash
 if   [ "$MODE" == "alpine" ]; then
 	doas apk add git vim gpg gpg-agent
-elif [ "$HOME" == "void"   ]; then
-	sudo xbps -S git vim
-elif [ "$HOME" == "arch"   ]; then
+elif [ "$MODE" == "void"   ]; then
+	sudo xbps-install -yu git vim
+elif [ "$MODE" == "arch"   ]; then
 	sudo pacman -S git vim gpg gpg-agent
 fi
 

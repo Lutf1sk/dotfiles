@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 TARGET_DIR="$HOME/.config/alacritty"
 TARGET="$TARGET_DIR/alacritty.toml"
 
@@ -6,9 +6,9 @@ cd $(dirname $0)
 
 if   [ "$MODE" == "alpine" ]; then
 	doas apk add alacritty
-elif [ "$HOME" == "void"   ]; then
-	sudo xbps -S alacritty
-elif [ "$HOME" == "arch"   ]; then
+elif [ "$MODE" == "void"   ]; then
+	sudo xbps-install -yu alacritty
+elif [ "$MODE" == "arch"   ]; then
 	sudo pacman -S alacritty
 fi
 

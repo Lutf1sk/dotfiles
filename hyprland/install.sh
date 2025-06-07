@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 TARGET_DIR="$HOME/.config/hyprland"
 TARGET="$TARGET_DIR/hyprland.conf"
 
@@ -7,9 +7,9 @@ cd $(dirname $0)
 if   [ "$MODE" == "alpine" ]; then
 	doas apk add pipewire pipewire-alsa pipewire-pulse pipewire-jack pipewire-tools wireplumber
 	doas apk add hyprland playerctl breeze-cursors
-elif [ "$HOME" == "void"   ]; then
-	sudo xbps -S hyprland playerctl
-elif [ "$HOME" == "arch"   ]; then
+elif [ "$MODE" == "void"   ]; then
+	sudo xbps-install -yu hyprland playerctl
+elif [ "$MODE" == "arch"   ]; then
 	sudo pacman -S hyprland playerctl
 fi
 

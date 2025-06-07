@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 TARGET_DIR="$HOME"
 TARGET="$TARGET_DIR/.vimrc"
 
@@ -6,9 +6,9 @@ cd $(dirname $0)
 
 if   [ "$MODE" == "alpine" ]; then
 	doas apk add vim
-elif [ "$HOME" == "void"   ]; then
-	sudo xbps -S vim
-elif [ "$HOME" == "arch"   ]; then
+elif [ "$MODE" == "void"   ]; then
+	sudo xbps-install -yu vim
+elif [ "$MODE" == "arch"   ]; then
 	sudo pacman -S vim
 fi
 
