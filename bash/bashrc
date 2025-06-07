@@ -10,7 +10,7 @@ alias mkf="touch"
 alias gadd="git add"
 alias gmv="git mv"
 alias grm="git rm"
-alias gcom="git commit"
+alias gcom="git commit -S"
 alias gdiff="git diff"
 alias gpush="git push origin"
 alias gpull="git pull --rebase origin"
@@ -47,6 +47,8 @@ host () {
 alias cloc="lcloc -c"
 alias lmodorg="lmodorg -c"
 alias lpass="sudo -E lpass"
+
+export GPG_TTY="$(tty)"
 
 if [ "$LED" == "1" ]; then
 	PS1='\[\e[93mled\e[0m >\] \[\e[92m\]\u\[\e[0m\]@\h \[\e[32m\]\w\[\e[0m\]> '
