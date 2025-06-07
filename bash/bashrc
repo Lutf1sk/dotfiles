@@ -55,6 +55,10 @@ if [ "$LED" == "1" ]; then
 	return
 fi
 
+if [ ! -z "$VIM" ]; then
+	shopt -s expand_aliases
+fi
+
 [[ $- != *i* ]] && return
 PS1='\[\e[92m\]\u\[\e[0m\]@\h \[\e[32m\]\w\[\e[0m\]> '
 

@@ -22,3 +22,5 @@ set tabstop=4
 set softtabstop=4
 set shiftwidth=4
 
+let $BASH_ENV="/home/lutfisk/.bashrc"
+
