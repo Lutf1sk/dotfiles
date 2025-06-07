@@ -1,4 +1,9 @@
 
+# ----- copy lxqt configs
+mkdir -p ~/.config/lxqt
+cp lxqt-archiver.conf ~/.config/lxqt/
+cp lxqt.conf ~/.config/lxqt/
+
 # ----- copy strawberry config
 mkdir -p ~/.config/strawberry
 cp strawberry.conf ~/.config/strawberry/

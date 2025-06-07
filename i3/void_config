@@ -13,5 +13,5 @@ exec --no-startup-id dbus-update-activation-environment --all
 
 
 # ----- program hotkeys (void)
-bindsym $mod+s exec --no-startup-id bash "~/.config/i3/toggle-keyboard-layout.sh"
+bindsym $mod+s exec --no-startup-id bash "$HOME/.config/i3/toggle-keyboard-layout.sh"
 
