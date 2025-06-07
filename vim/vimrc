@@ -1,4 +1,6 @@
 
+set syntax=on
+
 set noerrorbells
 set belloff=all
 
@@ -15,4 +17,8 @@ set nobackup
 set scrolloff=16
 
 set incsearch
+
+set tabstop=4
+set softtabstop=4
+set shiftwidth=4
 
