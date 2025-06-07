@@ -24,3 +24,6 @@ set shiftwidth=4
 
 let $BASH_ENV="/home/lutfisk/.bashrc"
 
+set runtimepath^=~/.vim/ctrlp.vim
+let g:ctrlp_map = '<c-k>'
+
