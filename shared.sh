@@ -16,10 +16,6 @@ cp alacritty.toml ~/.config/alacritty/
 mkdir -p ~/.config/i3
 cp i3/config i3/i3status.conf i3/volumectl.sh ~/.config/i3/
 
-# ----- copy strawberry config
-mkdir -p ~/.config/strawberry
-cp strawberry.conf ~/.config/strawberry/
-
 # ----- copy pcmanfm-qt config
 mkdir -p ~/.config/pcmanfm-qt/default
 cp pcmanfm-qt.conf ~/.config/pcmanfm-qt/default/settings.conf

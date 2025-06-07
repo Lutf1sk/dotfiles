@@ -1,0 +1,36 @@
+
+* {
+	outline:       0;
+	border:        0;
+	border-radius: 0;
+	box-shadow: none;
+	font-size: 14px;
+	color: #ebdbb2;
+}
+
+#input {
+	background-color: #282828;
+}
+
+#input > image:last-child {
+	-gtk-icon-transform: scale(0);
+	opacity: 0;
+}
+
+#scroll {
+	background-color: #121212;
+}
+
+#entry {
+	padding: 0;
+}
+
+.entry {
+	padding: 3px;
+	padding-left: 6px;
+}
+
+#selected {
+	background-color: #1d2021;
+}
+

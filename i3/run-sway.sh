@@ -17,3 +17,4 @@ exec >$SWAY_LOG 2>&1
 
 dbus-launch --exit-with-session sway --unsupported-gpu --verbose
 killall -w wireplumber pipewire
+

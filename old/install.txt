@@ -1,0 +1,14 @@
+
+# ----- copy strawberry config
+mkdir -p ~/.config/strawberry
+cp strawberry.conf ~/.config/strawberry/
+
+# ----- pulseaudio
+mkdir -p ~/.config/pulse
+cp pulse-daemon.conf ~/.config/pulse/daemon.conf
+
+# ----- qt setup
+kvantummanager --set KvFlatRed
+qt5ct &
+killall qt5ct
+

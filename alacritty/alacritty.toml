@@ -40,4 +40,4 @@ family = "Cousine"
 opacity = 1.0
 
 [general]
-live_config_reload = false
+live_config_reload = true
