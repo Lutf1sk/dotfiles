@@ -18,6 +18,7 @@ set noswapfile
 set nobackup
 set noerrorbells
 set belloff=all
+set timeout timeoutlen=3000 ttimeoutlen=50
 
 " tabs
 set tabstop=8
