@@ -1,29 +1,48 @@
 
 syntax on
 
-set noerrorbells
-set belloff=all
+set scrolloff=16
 
+" linenums
 set number
 set numberwidth=4
 set relativenumber
 
+" search
 set ignorecase
 set smartcase
-
-set noswapfile
-set nobackup
-
-set scrolloff=16
-
 set incsearch
 
-set tabstop=4
-set softtabstop=4
-set shiftwidth=4
+" annoying
+set noswapfile
+set nobackup
+set noerrorbells
+set belloff=all
 
+" tabs
+set tabstop=8
+set softtabstop=8
+set shiftwidth=8
+
+" aliases in :!
 let $BASH_ENV="/home/lutfisk/.bashrc"
 
+" trailing indent
+highlight ExtraWhitespace ctermfg=red cterm=underline
+match ExtraWhitespace /\s\+$/
+
+" 80 col marker
+set colorcolumn=80
+highlight ColorColumn ctermbg=none ctermfg=lightgreen cterm=underline
+
+" colors
+highlight Statement ctermfg=yellow
+highlight PreProc ctermfg=lightblue
+highlight Comment ctermfg=lightgreen
+
+" ctrlp
 set runtimepath^=~/.vim/ctrlp.vim
-let g:ctrlp_map = '<c-k>'
+let g:ctrlp_map='<c-k>'
+let g:ctrlp_custom_ignore='bin\|\.git\|\.o$\|\.a$\|\.so$\|\.bin$\|\.d$\|\.deps$'
+let g:ctrlp_working_path_mode=''
 
