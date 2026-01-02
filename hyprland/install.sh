@@ -1,5 +1,5 @@
 #!/bin/bash
-TARGET_DIR="$HOME/.config/hyprland"
+TARGET_DIR="$HOME/.config/hypr"
 TARGET="$TARGET_DIR/hyprland.conf"
 
 cd $(dirname $0)
