@@ -26,7 +26,7 @@
 		"format": "{capacity}%",
 		"full-at": 98,
 		"states": {
-			"critical": 10,
+			"critical": 10
 		}
 	},
 
