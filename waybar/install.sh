@@ -6,7 +6,7 @@ cd $(dirname $0)
 if   [ "$MODE" == "alpine" ]; then
 	doas apk add waybar
 elif [ "$MODE" == "void"   ]; then
-	sudo xbps-install -yu waybar
+	sudo xbps-install -yu Waybar
 elif [ "$MODE" == "arch"   ]; then
 	sudo pacman -S waybar
 fi
