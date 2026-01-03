@@ -8,6 +8,10 @@
 	color: #ebdbb2;
 }
 
+#outer-box {
+	border: 1px solid #fb4934;
+}
+
 #input {
 	background-color: #282828;
 }
